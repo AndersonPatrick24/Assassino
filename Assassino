@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class CrimeInvestigation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int positiveAnswers = 0;
+
+        System.out.println("Responda com 'sim' ou 'não' às seguintes perguntas:");
+
+        System.out.print("Telefonou para a vítima? ");
+        if (scanner.nextLine().equalsIgnoreCase("sim")) {
+            positiveAnswers++;
+        }
+
+        System.out.print("Esteve no local do crime? ");
+        if (scanner.nextLine().equalsIgnoreCase("sim")) {
+            positiveAnswers++;
+        }
+
+        System.out.print("Mora perto da vítima? ");
+        if (scanner.nextLine().equalsIgnoreCase("sim")) {
+            positiveAnswers++;
+        }
+
+        System.out.print("Devia para a vítima? ");
+        if (scanner.nextLine().equalsIgnoreCase("sim")) {
+            positiveAnswers++;
+        }
+
+        System.out.print("Já trabalhou com a vítima? ");
+        if (scanner.nextLine().equalsIgnoreCase("sim")) {
+            positiveAnswers++;
+        }
+
+
+        if (positiveAnswers == 2) {
+            System.out.println("Classificação: Suspeita");
+        } else if (positiveAnswers == 3 || positiveAnswers == 4) {
+            System.out.println("Classificação: Cúmplice");
+        } else if (positiveAnswers == 5) {
+            System.out.println("Classificação: Assassino");
+        } else {
+            System.out.println("Classificação: Inocente");
+        }
+
+        scanner.close();
+    }
+}
